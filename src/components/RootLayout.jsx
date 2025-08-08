@@ -1,8 +1,8 @@
 import SideBar from "./SideBar";
 import { useEffect } from "react";
 import { scroller } from "react-scroll";
-import Home from "../pages/home";
-import About from "../pages/about";
+import Home from "../pages/Home";
+import About from "../pages/About";
 import Resume from "../pages/Resume";
 import Portfolio from "../pages/Portfolio";
 import Contact from "../pages/Contact";
