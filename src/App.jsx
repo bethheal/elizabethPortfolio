@@ -1,6 +1,6 @@
 import React from "react";
 import RootLayout from "./components/RootLayout";
-import { Router } from "react-router";
+import { BrowserRouter as Router } from "react-router-dom";
 // import RootLayout from "./components/RootLayout";
 
 function App() {
