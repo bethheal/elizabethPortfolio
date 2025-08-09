@@ -7,11 +7,9 @@ import Resume from "../pages/Resume";
 import Portfolio from "../pages/Portfolio";
 import Contact from "../pages/Contact";
 
-
-
-
 function RootLayout() {
   useEffect(() => {
+    // Scroll to section if URL contains a hash
     const hash = window.location.hash.replace("#/", "");
     if (hash) {
       setTimeout(() => {
@@ -37,15 +35,15 @@ function RootLayout() {
         </section>
 
         <section id="resume" className="min-h-screen">
-          <Resume/>
+          <Resume />
         </section>
 
         <section id="portfolio" className="min-h-screen">
-          <Portfolio/>
+          <Portfolio />
         </section>
 
         <section id="contact" className="min-h-screen">
-          <Contact/>
+          <Contact />
         </section>
       </main>
     </div>
