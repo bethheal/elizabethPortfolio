@@ -3,6 +3,8 @@
 
 html, body {
   scroll-behavior: smooth; /* Optional: adds smooth scroll */
+  overflow-x: hidden;
+
 }
 
   

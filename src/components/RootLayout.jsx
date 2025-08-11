@@ -22,32 +22,29 @@ function RootLayout() {
     }
   }, []);
 
-  return (
-    <div className="flex">
-      <SideBar />
-      <main className="flex-1 ml-64 p-4">
-        <section id="home" className="min-h-screen">
-          <Home />
-        </section>
+ return (
+  <div className="flex">
+    <SideBar />
+    <main className="flex-1 p-4 sm:ml-64">
+      <section id="home" className="min-h-screen">
+        <Home />
+      </section>
+      <section id="about" className="min-h-screen">
+        <About />
+      </section>
+      <section id="resume" className="min-h-screen">
+        <Resume />
+      </section>
+      <section id="portfolio" className="min-h-screen">
+        <Portfolio />
+      </section>
+      <section id="contact" className="min-h-screen">
+        <Contact />
+      </section>
+    </main>
+  </div>
+);
 
-        <section id="about" className="min-h-screen">
-          <About />
-        </section>
-
-        <section id="resume" className="min-h-screen">
-          <Resume />
-        </section>
-
-        <section id="portfolio" className="min-h-screen">
-          <Portfolio />
-        </section>
-
-        <section id="contact" className="min-h-screen">
-          <Contact />
-        </section>
-      </main>
-    </div>
-  );
 }
 
 export default RootLayout;
