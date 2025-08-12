@@ -9,7 +9,7 @@ import Contact from "../pages/Contact";
 
 function RootLayout() {
   useEffect(() => {
-    // Scroll to section if URL contains a hash
+    // ScrollL contains a hash
     const hash = window.location.hash.replace("#/", "");
     if (hash) {
       setTimeout(() => {
@@ -23,26 +23,16 @@ function RootLayout() {
   }, []);
 
  return (
-  <div className="flex">
+  <>
     <SideBar />
-    <main className="flex-1 p-4 sm:ml-64">
-      <section id="home" className="min-h-screen">
+<main className="sm:ml-64 px-4 pt-6">
         <Home />
-      </section>
-      <section id="about" className="min-h-screen">
         <About />
-      </section>
-      <section id="resume" className="min-h-screen">
         <Resume />
-      </section>
-      <section id="portfolio" className="min-h-screen">
         <Portfolio />
-      </section>
-      <section id="contact" className="min-h-screen">
         <Contact />
-      </section>
     </main>
-  </div>
+  </>
 );
 
 }

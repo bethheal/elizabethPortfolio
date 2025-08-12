@@ -8,16 +8,13 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="flex flex-col items-center min-h-screen mb-30 relative px-2 sm:px-6 w-full max-w-screen overflow-x-hidden"
+      className="flex flex-col items-center min-h-screen px-2 w-full overflow-x-hidden mb-30"
     >
       {/* Header Greeting */}
-      <div className="pt-20 sm:pt-28 font-semibold flex flex-col items-center text-center w-full px-2 break-words">
-        <h1 className="text-medium text-base sm:text-lg md:text-xl">
-          Hello There
-        </h1>
+      <div className="pt-20 font-semibold flex flex-col items-center text-center w-full">
+        <h1 className="text-base sm:text-lg md:text-xl">Hello There</h1>
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-          I'm{" "}
-          <span className="italic text-orange-600">Elizabeth Dowuona</span>
+          I'm <span className="italic text-orange-600">Elizabeth Dowuona</span>
         </h2>
         <p className="text-gray-600 text-xs sm:text-sm md:text-base">
           Software Developer
@@ -25,16 +22,15 @@ const Home = () => {
       </div>
 
       {/* Main Content */}
-      <div className="flex flex-col lg:flex-row flex-wrap pt-8 lg:pt-20 gap-4 sm:gap-8 items-center lg:items-start justify-center w-full text-center lg:text-left">
-        
+      <div className="flex flex-col gap-4 pt-8 sm:gap-8 sm:pt-12 lg:flex-row lg:items-start lg:text-left text-center w-full justify-center">
         {/* Left Section */}
-        <div className="flex flex-col items-center lg:items-start px-2 sm:px-4 flex-1 min-w-[200px] max-w-full break-words">
+        <div className="flex flex-col items-center px-2 sm:px-4 lg:items-start flex-1">
           <FaQuoteLeft className="self-center lg:self-start" />
-          <p className="font-light text-xs sm:text-sm text-gray-700 mt-4 mb-8">
-            Passionate about turning ideas into intuitive digital experiences,
-            I specialize in building responsive, user-focused interfaces.
-            I thrive in collaborative environments, constantly seek to learn
-            and evolve in the ever-changing world of tech.
+          <p className="font-light text-xs sm:text-sm text-gray-700 mt-4 mb-8 max-w-sm">
+            Passionate about turning ideas into intuitive digital experiences, I
+            specialize in building responsive, user-focused interfaces. I thrive
+            in collaborative environments, constantly seek to learn and evolve
+            in the ever-changing world of tech.
           </p>
 
           <div className="flex flex-col items-center lg:items-start">
@@ -49,24 +45,24 @@ const Home = () => {
         </div>
 
         {/* Middle Section */}
-        <div className="flex flex-1 flex-col items-center justify-center min-w-[200px] max-w-full">
-          <div className="relative flex flex-col items-center w-full mx-auto">
+        <div className="flex flex-col items-center justify-center flex-1">
+          <div className="relative flex flex-col items-center w-full max-w-xs sm:max-w-sm lg:max-w-md">
             {/* Background Image */}
             <img
               src={bgImg}
               alt="Background"
-              className="w-full max-w-full h-48 sm:h-56 lg:h-64 object-cover object-center rounded-xl"
+              className="w-full h-48 sm:h-56 lg:h-64 object-cover object-center rounded-xl"
             />
 
             {/* Profile Image */}
             <img
               src={profileImg}
               alt="Profile"
-              className="w-32 h-32 sm:w-48 sm:h-48 lg:w-72 lg:h-72 object-cover object-center rounded-full border-4 border-white shadow-lg absolute sm:top-14 lg:top-8 top-12 z-10 max-w-full mx-auto"
+              className="w-32 h-32 sm:w-48 sm:h-48 lg:w-72 lg:h-72 object-cover object-center rounded-full border-4 border-white shadow-lg absolute top-12 sm:top-14 lg:top-8 z-10"
             />
 
             {/* Buttons */}
-            <div className="relative sm:absolute sm:top-[calc(100%+4rem)] flex flex-col sm:flex-row flex-wrap gap-3 z-20 bg-white p-2 rounded-full shadow-xl mt-4 sm:mt-0">
+            <div className="relative mt-4 sm:absolute sm:top-[calc(100%+4rem)] flex flex-col sm:flex-row gap-3 z-20 bg-white p-2 rounded-full shadow-xl">
               <Link
                 to="portfolio"
                 smooth={true}
@@ -86,14 +82,12 @@ const Home = () => {
         </div>
 
         {/* Right Section */}
-        <div className="flex flex-col items-center lg:items-center space-y-4 flex-1 min-w-[200px] max-w-full">
-          <div>
-            <p className="bg-black text-white px-4 py-1 rounded-full text-xs sm:text-sm font-medium">
-              React.js
-            </p>
-          </div>
+        <div className="flex flex-col items-center space-y-4 flex-1">
+          <p className="bg-black text-white px-4 py-1 rounded-full text-xs sm:text-sm font-medium">
+            React.js
+          </p>
 
-          <div className="flex flex-wrap justify-center lg:justify-center gap-2 sm:gap-3">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
             <p className="bg-orange-500 text-white px-4 py-1 rounded-full text-xs sm:text-sm font-medium">
               Node.js
             </p>
@@ -109,18 +103,16 @@ const Home = () => {
             </p>
           </div>
 
-          <div>
-            <p className="bg-orange-200 text-black px-4 py-1 rounded-full text-xs sm:text-sm font-medium flex items-center gap-1">
-              <span className="bg-orange-600 w-2 h-2 rounded-full inline-block"></span>
-              Firebase
-            </p>
-          </div>
+          <p className="bg-orange-200 text-black px-4 py-1 rounded-full text-xs sm:text-sm font-medium flex items-center gap-1">
+            <span className="bg-orange-600 w-2 h-2 rounded-full inline-block"></span>
+            Firebase
+          </p>
         </div>
       </div>
 
       {/* Skills Scroller */}
-      <div className="w-full relative bg-black py-2 mt-10 sm:mt-20 overflow-x-auto no-scrollbar">
-        <div className="flex animate-scroll items-center whitespace-nowrap px-4 text-xs sm:text-sm space-x-4 max-w-full">
+      <div className="w-full relative bg-black py-2 mt-10 sm:mt-20 overflow-x-auto no-scrollbar lg:mt-34">
+        <div className="flex animate-scroll items-center whitespace-nowrap px-4 text-xs sm:text-sm space-x-4">
           <span className="text-white">Responsive Design</span>
           <span className="text-red-500">+</span>
           <span className="text-white">Database</span>
