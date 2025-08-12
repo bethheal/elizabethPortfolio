@@ -25,7 +25,7 @@ const portfolioItems = [
 
 const Portfolio = () => {
   return (
-    <section className="bg-black mb-20 text-white min-h-screen py-10 px-4 sm:py-16 sm:px-6 overflow-x-hidden">
+    <section id="portfolio" className="bg-black mb-20 text-white min-h-screen py-10 px-4 sm:py-16 sm:px-6 overflow-x-hidden">
       {/* Heading */}
       <div className="flex justify-center mb-8 sm:mb-10">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold border-y-2 px-4 sm:px-6 py-2 text-center">

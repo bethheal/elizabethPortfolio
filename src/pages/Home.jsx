@@ -68,15 +68,20 @@ const Home = () => {
                 smooth={true}
                 duration={500}
                 offset={-70}
-                className="bg-black text-orange-600 px-4 py-2 rounded-full flex items-center gap-2 text-xs sm:text-sm shadow-xl hover:bg-orange-600 hover:text-white transition-colors duration-300"
+                className="bg-black text-orange-600 px-4 py-2 rounded-full cursor-pointer flex items-center gap-2 text-xs sm:text-sm shadow-xl hover:bg-orange-600 hover:text-white transition-colors duration-300"
               >
                 <span>Portfolio</span>
                 <FaLongArrowAltRight className="rounded-full text-white w-4 h-4 bg-orange-600" />
               </Link>
 
-              <button className="text-orange-600 px-5 py-2 border border-black rounded-full text-xs sm:text-sm shadow hover:bg-orange-600 hover:text-white transition-colors duration-300">
+              <Link
+                to="contact"
+                smooth={true}
+                duration={500}
+                offset={-70} 
+                className="text-orange-600 cursor-pointer px-5 py-2 border border-black rounded-full text-xs sm:text-sm shadow hover:bg-orange-600 hover:text-white transition-colors duration-300">
                 Hire me
-              </button>
+              </Link>
             </div>
           </div>
         </div>
