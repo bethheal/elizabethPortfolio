@@ -25,7 +25,7 @@ const About = () => {
               Elizabeth,
             </span>{" "}
             <span className="font-light text-base sm:text-lg">
-              a Frontend Developer Enthusiast
+              a Software Developer 
             </span>{" "}
             skilled in creating responsive and interactive user interfaces.
             <br />

@@ -3,8 +3,8 @@ import { useEffect } from "react";
 import { scroller } from "react-scroll";
 import Home from "../pages/Home";
 import About from "../pages/About";
-import Resume from "../pages/Resume";
-import Portfolio from "../pages/Portfolio";
+import Skills from "../pages/Skills";
+import Projects from "../pages/Projects";
 import Contact from "../pages/Contact";
 
 function RootLayout() {
@@ -28,8 +28,8 @@ function RootLayout() {
 <main className="sm:ml-64 px-4 pt-6">
         <Home />
         <About />
-        <Resume />
-        <Portfolio />
+        <Skills />
+        <Projects />
         <Contact />
     </main>
   </>

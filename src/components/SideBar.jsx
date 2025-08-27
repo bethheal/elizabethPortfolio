@@ -15,7 +15,7 @@ const SideBar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "resume", "portfolio", "contact"];
+      const sections = ["home", "about", "skills", "Projects", "contact"];
       for (let id of sections) {
         const section = document.getElementById(id);
         if (section) {
@@ -35,8 +35,8 @@ const SideBar = () => {
   const navItems = [
     { id: "home", icon: <CiHome />, label: "Home" },
     { id: "about", icon: <GoPerson />, label: "About" },
-    { id: "resume", icon: <TbFileCv />, label: "Resume" },
-    { id: "portfolio", icon: <LiaFolderOpenSolid />, label: "Portfolio" },
+    { id: "skills", icon: <TbFileCv />, label: "Skills" },
+    { id: "projects", icon: <LiaFolderOpenSolid />, label: "Projects" },
     { id: "contact", icon: <TfiEmail />, label: "Contact" },
   ];
 

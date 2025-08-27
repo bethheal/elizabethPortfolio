@@ -3,6 +3,8 @@ import { bgImg, profileImg } from "../assets";
 import { FaLongArrowAltRight, FaQuoteLeft } from "react-icons/fa";
 import AvatarReview from "./PagesComponents/AvatarReview";
 import { Link } from "react-scroll";
+import TextAnimation from "./PagesComponents/TextAnimation";
+
 
 const Home = () => {
   return (
@@ -13,12 +15,13 @@ const Home = () => {
       {/* Header Greeting */}
       <div className="pt-20 font-semibold flex flex-col items-center text-center w-full">
         <h1 className="text-base sm:text-lg md:text-xl">Hello There</h1>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+        {/* <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
           I'm <span className="italic text-orange-600">Elizabeth Dowuona</span>
-        </h2>
-        <p className="text-gray-600 text-xs sm:text-sm md:text-base">
+        </h2> */}
+        <TextAnimation/>
+        {/* <p className="text-gray-600 text-xs sm:text-sm md:text-base">
           Software Developer
-        </p>
+        </p> */}
       </div>
 
       {/* Main Content */}
@@ -64,13 +67,13 @@ const Home = () => {
             {/* Buttons */}
             <div className="relative mt-4 sm:absolute sm:top-[calc(100%+4rem)] flex flex-col sm:flex-row gap-3 z-20 bg-white p-2 rounded-full shadow-xl">
               <Link
-                to="portfolio"
+                to="projects"
                 smooth={true}
                 duration={500}
                 offset={-70}
                 className="bg-black text-orange-600 px-4 py-2 rounded-full cursor-pointer flex items-center gap-2 text-xs sm:text-sm shadow-xl hover:bg-orange-600 hover:text-white transition-colors duration-300"
               >
-                <span>Portfolio</span>
+                <span>Projects</span>
                 <FaLongArrowAltRight className="rounded-full text-white w-4 h-4 bg-orange-600" />
               </Link>
 
