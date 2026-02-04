@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { GoProjectSymlink } from "react-icons/go";
 import { motion, AnimatePresence } from "framer-motion";
-import { portfolioImg, reviewImg, nectRuralImg, coffeeListImg, itfImg } from "../assets";
+import { portfolioImg, reviewImg, nectRuralImg, coffeeListImg, itfImg, realview, millmeProducts} from "../assets";
 import { BackgroundBeams } from "../components/bgMotion";
 import AnimatedText from "./PagesComponents/projects-text-animate";
 
@@ -29,6 +29,22 @@ const ProjectsItems = [
     github:"https://github.com/bethheal/coffee-listing",
     live: "https://litcoffeelisting.netlify.app/",
   },
+   {
+    title: "Real View Estate and Construction",
+    category: "Web App",
+    image: realview,
+    github:"https://github.com/bethheal/RealViewSafe",
+    live: "https://realviewfrontend.onrender.com/",
+  },
+     {
+    title: "Millme Products",
+    category: "Website",
+    image: millmeProducts,
+    github:"https://github.com/bethheal/MILLME",
+    live: "https://millme.netlify.app/",
+  },
+  
+
   {
     title: "nectRural",
     category: "Web App",

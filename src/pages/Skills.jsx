@@ -20,6 +20,7 @@ import {
   SiTrello,
   SiClickup,
   SiNetlify,
+  SiTypescript,
 } from "react-icons/si";
 
 const devSkills = [
@@ -35,6 +36,11 @@ const devSkills = [
   {
     name: "JavaScript",
     icon: <FaJsSquare className="text-yellow-400" />,
+    level: 75,
+  },
+   {
+    name: "TypeScript",
+    icon: <SiTypescript className="text-blue-400" />,
     level: 75,
   },
   { name: "Git", icon: <FaGitAlt className="text-orange-500" />, level: 70 },

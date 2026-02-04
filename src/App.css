@@ -1,0 +1,42 @@
+/* Skills crawler animation */
+.skills-crawler {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.skills-track {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: max-content;
+  flex-wrap: nowrap;
+  will-change: transform;
+  animation: scroll-left 20s linear infinite;
+}
+
+/* IMPORTANT: keep each duplicated group from shrinking */
+.skills-track > div {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* optional */
+}
+
+
+.skills-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0%   { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+/* hide native scrollbar where applicable */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

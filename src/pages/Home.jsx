@@ -65,7 +65,7 @@ const Home = () => {
             />
 
             {/* Buttons */}
-            <div className="relative mt-4 sm:absolute sm:top-[calc(100%+4rem)] flex flex-col sm:flex-row gap-3 z-20 bg-white p-2 rounded-full shadow-xl">
+            <div className="relative my-2 sm:absolute sm:top-[calc(100%+4rem)] flex flex-col sm:flex-row gap-3 z-20 bg-white p-2 rounded-full shadow-xl">
               <Link
                 to="projects"
                 smooth={true}
@@ -117,23 +117,77 @@ const Home = () => {
           </p>
         </div>
       </div>
+<div className="mt-10">
+  <div className="w-full relative bg-black py-2 mt-12 sm:mt-20 lg:mt-32 overflow-hidden whitespace-nowrap">
+    <div className="flex w-max animate-marquee will-change-transform hover:[animation-play-state:paused]">
 
-      {/* Skills Scroller */}
-      <div className="w-full relative bg-black py-2 mt-10 sm:mt-20 overflow-x-auto no-scrollbar lg:mt-34">
-        <div className="flex animate-scroll items-center whitespace-nowrap px-4 text-xs sm:text-sm space-x-4">
-          <span className="text-white">Responsive Design</span>
-          <span className="text-red-500">+</span>
-          <span className="text-white">Database</span>
-          <span className="text-red-500">+</span>
-          <span className="text-white">API Integration</span>
-          <span className="text-red-500">+</span>
-          <span className="text-white">Optimization</span>
-          <span className="text-red-500">+</span>
-          <span className="text-white">Authentication</span>
-          <span className="text-red-500">+</span>
-          <span className="text-white">Deployment</span>
-        </div>
+      {/* Track 1 */}
+      <div className="flex items-center gap-4 px-6 text-xs sm:text-sm flex-none">
+        <span className="text-white">Responsive Design</span>
+        <span className="text-red-500">+</span>
+        <span className="text-white">Database</span>
+        <span className="text-red-500">+</span>
+        <span className="text-white">API Integration</span>
+        <span className="text-red-500">+</span>
+        <span className="text-white">Optimization</span>
+        <span className="text-red-500">+</span>
+        <span className="text-white">Authentication</span>
+        <span className="text-red-500">+</span>
+        <span className="text-white">Deployment</span>
+        <span className="text-red-500">+</span>
+        <span className="text-white">TypeScript</span>
+        <span className="text-red-500">+</span>
+        <span className="text-white">GraphQL</span>
+        <span className="text-red-500">+</span>
+        <span className="text-white">Docker</span>
+        <span className="text-red-500">+</span>
+        <span className="text-white">CI/CD</span>
+        <span className="text-red-500">+</span>
+        <span className="text-white">Testing</span>
+        <span className="text-red-500">+</span>
+        <span className="text-white">Accessibility</span>
+        <span className="text-red-500">+</span>
+        <span className="text-white">Performance</span>
+        <span className="text-red-500">+</span>
+        <span className="text-white">Design Systems</span>
       </div>
+
+      {/* Track 2 */}
+      <div className="flex items-center gap-4 px-6 text-xs sm:text-sm flex-none" aria-hidden="true">
+        <span className="text-white">Responsive Design</span>
+        <span className="text-red-500">+</span>
+        <span className="text-white">Database</span>
+        <span className="text-red-500">+</span>
+        <span className="text-white">API Integration</span>
+        <span className="text-red-500">+</span>
+        <span className="text-white">Optimization</span>
+        <span className="text-red-500">+</span>
+        <span className="text-white">Authentication</span>
+        <span className="text-red-500">+</span>
+        <span className="text-white">Deployment</span>
+        <span className="text-red-500">+</span>
+        <span className="text-white">TypeScript</span>
+        <span className="text-red-500">+</span>
+        <span className="text-white">GraphQL</span>
+        <span className="text-red-500">+</span>
+        <span className="text-white">Docker</span>
+        <span className="text-red-500">+</span>
+        <span className="text-white">CI/CD</span>
+        <span className="text-red-500">+</span>
+        <span className="text-white">Testing</span>
+        <span className="text-red-500">+</span>
+        <span className="text-white">Accessibility</span>
+        <span className="text-red-500">+</span>
+        <span className="text-white">Performance</span>
+        <span className="text-red-500">+</span>
+        <span className="text-white">Design Systems</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
     </section>
   );
 };
