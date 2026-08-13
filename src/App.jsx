@@ -3,6 +3,7 @@ import RootLayout from "./components/RootLayout";
 import { FaArrowUp } from "react-icons/fa";
 import { AnimatePresence, motion } from "framer-motion";
 import Loader from "./components/Loader";
+import "./App.css";
 
 function App() {
   const [showScroll, setShowScroll] = useState(false);

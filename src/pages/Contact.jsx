@@ -1,15 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  FaLinkedinIn,
-  FaInstagram,
+  FaArrowUp,
+  FaArrowRight,
   FaGithub,
-  FaHome,
+  FaInstagram,
+  FaLinkedinIn,
   FaEnvelope,
-  FaInfo,
 } from "react-icons/fa";
 import { Link as ScrollLink } from "react-scroll";
-import { contactImg } from "../assets";
+import { logoDesign } from "../assets/images";
 
 const Contact = () => {
   const LINKEDIN = "https://www.linkedin.com/in/elizabethdowuona/";
@@ -17,205 +17,503 @@ const Contact = () => {
   const GITHUB = "https://github.com/bethheal/";
   const EMAIL = "elizabethbarden18@gmail.com";
 
-  const ACCENT = "#fffff"; // background/accent
-  const HOVER = "#FF8904"; // hover accent
+  const footerLinks = {
+    studio: [
+      { label: "About", to: "about" },
+      { label: "Experience", to: "experience" },
+      { label: "Skills", to: "skills" },
+    ],
+    work: [
+      { label: "Projects", to: "projects" },
+      { label: "Contact", to: "contact" },
+    ],
+  };
+
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 25,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.65,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+  };
 
   return (
-    <section
+    <footer
       id="contact"
-      className="min-h-screen bg-[#fffff] px-4 py-10 sm:py-14"
+      className="relative overflow-hidden bg-[#090b10] px-4 pb-5 pt-16 text-white sm:px-6 lg:px-10"
     >
-      <div className="mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="relative overflow-hidden rounded-[28px] bg-zinc-950 shadow-2xl"
-        >
-          {/* subtle background texture */}
-          <div className="pointer-events-none absolute inset-0 opacity-30">
-            <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-white/5 blur-3xl" />
-            <div className="absolute -right-24 -bottom-24 h-72 w-72 rounded-full bg-white/5 blur-3xl" />
-          </div>
+      {/* =====================================================
+          BACKGROUND ATMOSPHERE
+      ====================================================== */}
 
-          {/* Left vertical nav */}
-          <div className="absolute left-5 top-1/2 z-20 hidden -translate-y-1/2 flex-col gap-3 sm:flex">
-            <ScrollLink
-              to="home"
-              smooth
-              duration={500}
-              offset={-70}
-              className="grid h-11 w-11 place-items-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/15 cursor-pointer"
-              style={{ color: "white" }}
-              aria-label="Go to Home"
-              role="button"
-            >
-              <FaHome className="text-[18px]" />
-            </ScrollLink>
+      {/* Main breathing glow */}
+      <motion.div
+        className="pointer-events-none absolute left-[25%] top-[25%] h-[350px] w-[350px] rounded-full bg-[#d9ff32]/20 blur-[120px]"
+        animate={{
+          scale: [1, 1.18, 1],
+          opacity: [0.18, 0.35, 0.18],
+          x: [0, 40, -20, 0],
+          y: [0, -25, 30, 0],
+        }}
+        transition={{
+          duration: 9,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
 
-            <a
-              href={`mailto:${EMAIL}`}
-              className="grid h-11 w-11 place-items-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/15 cursor-pointer"
-              aria-label="Email"
-              title="Email"
-            >
-              <FaEnvelope className="text-[18px]" />
-            </a>
+      {/* Secondary breathing glow */}
+      <motion.div
+        className="pointer-events-none absolute -bottom-32 right-[18%] h-[300px] w-[300px] rounded-full bg-[#b8e91e]/10 blur-[100px]"
+        animate={{
+          scale: [1, 1.25, 1],
+          opacity: [0.08, 0.2, 0.08],
+        }}
+        transition={{
+          duration: 7,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1,
+        }}
+      />
 
-            {/* Optional: scroll to about (change to your section id) */}
-            <ScrollLink
-              to="about"
-              smooth
-              duration={500}
-              offset={-70}
-              className="grid h-11 w-11 place-items-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/15 cursor-pointer"
-              aria-label="Go to About"
-              role="button"
-            >
-              <FaInfo className="text-[18px]" />
-            </ScrollLink>
-          </div>
+      {/* Subtle moving light */}
+      <motion.div
+        className="pointer-events-none absolute left-0 top-0 h-px w-[35%] bg-gradient-to-r from-transparent via-[#d9ff32]/40 to-transparent"
+        animate={{
+          x: ["0%", "220%"],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+      />
 
-          {/* Top-right socials */}
-          <div className="absolute right-6 top-6 z-20 flex items-center gap-2">
-            <a
-              href={LINKEDIN}
-              target="_blank"
-              rel="noreferrer"
-              className="grid h-9 w-9 place-items-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/15"
-              aria-label="LinkedIn"
-              title="LinkedIn"
-              onMouseEnter={(e) => (e.currentTarget.style.color = HOVER)}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "white")}
-            >
-              <FaLinkedinIn />
-            </a>
+      {/* =====================================================
+          FOOTER CONTAINER
+      ====================================================== */}
 
-            <a
-              href={INSTAGRAM}
-              target="_blank"
-              rel="noreferrer"
-              className="grid h-9 w-9 place-items-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/15"
-              aria-label="Instagram"
-              title="Instagram"
-              onMouseEnter={(e) => (e.currentTarget.style.color = HOVER)}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "white")}
-            >
-              <FaInstagram />
-            </a>
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.15 }}
+        className="
+          relative
+          mx-auto
+          max-w-[1280px]
+          overflow-hidden
+          rounded-[28px]
+          border
+          border-white/[0.07]
+          bg-white/[0.025]
+          shadow-[0_30px_100px_rgba(0,0,0,0.35)]
+          backdrop-blur-2xl
+        "
+      >
+        {/* Glass shine */}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/[0.05] via-transparent to-transparent" />
 
-            <a
-              href={GITHUB}
-              target="_blank"
-              rel="noreferrer"
-              className="grid h-9 w-9 place-items-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/15"
-              aria-label="GitHub"
-              title="GitHub"
-              onMouseEnter={(e) => (e.currentTarget.style.color = HOVER)}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "white")}
-            >
-              <FaGithub />
-            </a>
-          </div>
+        {/* Top inner glow */}
+        <div className="pointer-events-none absolute left-[8%] top-0 h-px w-[84%] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
-          {/* Content */}
-          <div className="relative z-10 grid grid-cols-1 gap-10 px-6 py-10 sm:px-12 sm:py-14 lg:grid-cols-2 lg:gap-0">
-            {/* Left: form */}
-            <div className="lg:pr-12">
-              <h2 className="text-3xl font-bold text-white sm:text-4xl">
-                Let’s <span className="text-[#FFD6A7]">talk</span>
-              </h2>
+        <div className="relative z-10 px-6 py-10 sm:px-10 sm:py-12 lg:px-14 lg:py-14">
+          {/* =================================================
+              MAIN FOOTER CONTENT
+          ================================================== */}
 
-              <p className="mt-3 max-w-md text-sm leading-relaxed text-white/60">
-                Send me a message. You can also
-                reach me directly via email.
-              </p>
-
-              <form
-                className="mt-7 ml-10 space-y-4"
-                onSubmit={(e) => e.preventDefault()}
-              >
-                <div>
-                  <label className="mb-2 block text-xs text-white/70">
-                    Your Name
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Enter your name"
-                    className="w-full rounded-xl bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none ring-1 ring-white/10 focus:ring-2 focus:ring-[#FFD6A7]"
-                  />
-                </div>
-
-                <div>
-                  <label className="mb-2 block text-xs text-white/70">
-                    Your Email
-                  </label>
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="w-full rounded-xl bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none ring-1 ring-white/10 focus:ring-2 focus:ring-[#FFD6A7]"
-                  />
-                </div>
-
-                <div>
-                  <label className="mb-2 block text-xs text-white/70">
-                    Your Message
-                  </label>
-                  <textarea
-                    placeholder="Type your message here..."
-                    rows={5}
-                    className="w-full resize-none rounded-2xl bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none ring-1 ring-white/10 focus:ring-2 focus:ring-[#FFD6A7]"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="inline-flex items-center justify-center rounded-xl bg-[#FFD6A7] px-6 py-3 text-xs font-semibold uppercase tracking-wider text-zinc-950 transition-colors hover:bg-[#FF8904]"
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.3fr_1fr_1fr_1fr] lg:gap-10">
+            {/* BRAND */}
+            <motion.div variants={itemVariants}>
+              <div className="flex items-center gap-3">
+                {/* Logo mark */}
+                <motion.div
+                  whileHover={{
+                    rotate: 90,
+                    scale: 1.15,
+                  }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 15,
+                  }}
+                  className="flex h-7 w-7 items-center justify-center"
                 >
-                  Send Message
-                </button>
+                 
+                  <span className="text-3xl font-black leading-none  border-[#f54a00] border-1 rounded-full ">
+                     <img className="rounded-full" src={logoDesign} alt="LiT Logo" />
+                  </span>
+                </motion.div>
 
-                <p className="pt-2 text-xs text-white/50">
-                  Or email me:{" "}
-                  <a
-                    href={`mailto:${EMAIL}`}
-                    className="text-white hover:text-[#FF8904]"
-                  >
-                    {EMAIL}
-                  </a>
-                </p>
-              </form>
-            </div>
-
-            {/* Right: image + blob */}
-            <div className="relative flex items-center justify-center lg:justify-end">
-              {/* yellow blob */}
-              <div className="absolute -bottom-10 right-4 h-[220px] w-[220px] rounded-[60%_40%_55%_45%/55%_45%_55%_45%] bg-[#FFD6A7]/95 sm:h-[300px] sm:w-[300px] md:h-[340px] md:w-[340px]" />
-
-              {/* white outline accent */}
-              <div className="pointer-events-none absolute -bottom-10 right-2 h-[160px] w-[160px] rounded-[60%_40%_55%_45%/55%_45%_55%_45%] border-2 border-white/80 sm:h-[220px] sm:w-[220px]" />
-
-              {/* circular photo */}
-              <div className="relative z-10 h-[180px] w-[180px] overflow-hidden rounded-full drop-shadow-2xl sm:h-[260px] sm:w-[260px] md:h-[340px] md:w-[340px]">
-                <motion.img
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.7 }}
-                  src={contactImg}
-                  alt="Profile"
-                  className="h-full w-full object-cover"
-                />
+                <span className="text-[17px] font-bold tracking-[0.18em]">
+                  LiT
+                </span>
               </div>
 
-              {/* Optional: subtle ring behind circle for extra depth */}
-              <div className="pointer-events-none absolute -bottom-2 right-10 hidden h-[380px] w-[380px] rounded-full border border-white/10 lg:block" />
-            </div>
+              <motion.p
+                variants={itemVariants}
+                className="mt-6 max-w-[270px] text-sm leading-6 text-white/50"
+              >
+                Software engineer crafting digital experiences, scalable
+                products, and thoughtful interfaces.
+              </motion.p>
+
+              {/* CTA */}
+             <motion.a
+  variants={itemVariants}
+  href={`mailto:${EMAIL}`}
+  whileHover={{
+    scale: 1.04,
+    y: -2,
+  }}
+  whileTap={{
+    scale: 0.97,
+  }}
+  className="
+    group
+    mt-7
+    inline-flex
+    items-center
+    gap-3
+    rounded-full
+    bg-[#f54a00]
+    px-5
+    py-3
+    text-xs
+    font-bold
+    tracking-wide
+    text-[#090b10]
+    shadow-[0_0_30px_rgba(217,255,50,0.15)]
+    transition-shadow
+    duration-300
+    hover:shadow-[0_0_35px_rgba(217,255,50,0.35)]
+  "
+>
+  Let's talk
+
+  <motion.span
+    animate={{
+      x: [0, 3, 0],
+    }}
+    transition={{
+      duration: 1.5,
+      repeat: Infinity,
+    }}
+  >
+    <FaArrowRight className="text-[10px]" />
+  </motion.span>
+</motion.a>
+            </motion.div>
+
+            {/* STUDIO */}
+            <motion.div variants={itemVariants}>
+              <h3 className="mb-5 text-[11px] font-bold uppercase tracking-[0.18em] text-[#f54a00]">
+                Studio
+              </h3>
+
+              <div className="space-y-4">
+                {footerLinks.studio.map((link) => (
+                  <ScrollLink
+                    key={link.label}
+                    to={link.to}
+                    smooth
+                    duration={600}
+                    offset={-70}
+                    className="
+                      group
+                      relative
+                      block
+                      w-fit
+                      cursor-pointer
+                      text-sm
+                      text-white/50
+                      transition-colors
+                      duration-300
+                      hover:text-white
+                    "
+                  >
+                    {link.label}
+
+                    <span
+                      className="
+                        absolute
+                        -bottom-1
+                        left-0
+                        h-px
+                        w-0
+                        bg-[#f54a00]
+                        transition-all
+                        duration-300
+                        group-hover:w-full
+                      "
+                    />
+                  </ScrollLink>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* WORK */}
+            <motion.div variants={itemVariants}>
+              <h3 className="mb-5 text-[11px] font-bold uppercase tracking-[0.18em] text-[#f54a00]">
+                Work
+              </h3>
+
+              <div className="space-y-4">
+                {footerLinks.work.map((link) => (
+                  <ScrollLink
+                    key={link.label}
+                    to={link.to}
+                    smooth
+                    duration={600}
+                    offset={-70}
+                    className="
+                      group
+                      relative
+                      block
+                      w-fit
+                      cursor-pointer
+                      text-sm
+                      text-white/50
+                      transition-colors
+                      duration-300
+                      hover:text-white
+                    "
+                  >
+                    {link.label}
+
+                    <span
+                      className="
+                        absolute
+                        -bottom-1
+                        left-0
+                        h-px
+                        w-0
+                        bg-[#f54a00]
+                        transition-all
+                        duration-300
+                        group-hover:w-full
+                      "
+                    />
+                  </ScrollLink>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* CONNECT */}
+            <motion.div variants={itemVariants}>
+              <h3 className="mb-5 text-[11px] font-bold uppercase tracking-[0.18em] text-[#f54a00]">
+                Connect
+              </h3>
+
+              <div className="space-y-4">
+                <motion.a
+                  whileHover={{ x: 5 }}
+                  href={INSTAGRAM}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex w-fit items-center gap-2 text-sm text-white/50 transition-colors hover:text-white"
+                >
+                  Instagram
+                  <FaArrowRight className="text-[8px] opacity-0 transition-opacity group-hover:opacity-100" />
+                </motion.a>
+
+                <motion.a
+                  whileHover={{ x: 5 }}
+                  href={LINKEDIN}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex w-fit items-center gap-2 text-sm text-white/50 transition-colors hover:text-white"
+                >
+                  LinkedIn
+                  <FaArrowRight className="text-[8px] opacity-0 transition-opacity group-hover:opacity-100" />
+                </motion.a>
+
+                <motion.a
+                  whileHover={{ x: 5 }}
+                  href={GITHUB}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex w-fit items-center gap-2 text-sm text-white/50 transition-colors hover:text-white"
+                >
+                  GitHub
+                  <FaArrowRight className="text-[8px] opacity-0 transition-opacity group-hover:opacity-100" />
+                </motion.a>
+
+                <motion.a
+                  whileHover={{ x: 5 }}
+                  href={`mailto:${EMAIL}`}
+                  className="group flex w-fit items-center gap-2 text-sm text-white/50 transition-colors hover:text-white"
+                >
+                  {EMAIL}
+                  <FaEnvelope className="text-[9px] opacity-0 transition-opacity group-hover:opacity-100" />
+                </motion.a>
+              </div>
+            </motion.div>
           </div>
-        </motion.div>
-      </div>
-    </section>
+
+          {/* =================================================
+              DIVIDER
+          ================================================== */}
+
+          <motion.div
+            variants={itemVariants}
+            className="my-10 h-px w-full bg-white/[0.07]"
+          />
+
+          {/* =================================================
+              BOTTOM BAR
+          ================================================== */}
+
+          <motion.div
+            variants={itemVariants}
+            className="
+              flex
+              flex-col
+              gap-5
+              text-[10px]
+              font-medium
+              uppercase
+              tracking-[0.12em]
+              text-white/35
+              sm:flex-row
+              sm:items-center
+              sm:justify-between
+            "
+          >
+            <div className="flex items-center gap-2">
+              <span>© {new Date().getFullYear()}</span>
+              <span className="text-white/15">•</span>
+              <span>LiT. All rights reserved.</span>
+            </div>
+
+            {/* Back to top */}
+            <motion.button
+              onClick={() =>
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                })
+              }
+              whileHover={{
+                y: -3,
+              }}
+              whileTap={{
+                scale: 0.9,
+              }}
+              className="
+                group
+                flex
+                w-fit
+                items-center
+                gap-3
+                transition-colors
+                hover:text-[#f54a00]
+              "
+            >
+              <span>Back to top</span>
+
+              <span
+                className="
+                  grid
+                  h-7
+                  w-7
+                  place-items-center
+                  rounded-full
+                  border
+                  border-white/10
+                  bg-white/[0.03]
+                  transition-all
+                  duration-300
+                  group-hover:border-[#d9ff32]/40
+                  group-hover:bg-[#d9ff32]/10
+                "
+              >
+                <FaArrowUp className="text-[9px]" />
+              </span>
+            </motion.button>
+          </motion.div>
+        </div>
+      </motion.div>
+
+      {/* =====================================================
+          MOBILE SOCIAL BAR
+      ====================================================== */}
+
+      <motion.div
+        initial={{ opacity: 0, y: 15 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="mx-auto mt-5 flex max-w-[1280px] items-center justify-center gap-3 lg:hidden"
+      >
+        {[
+          {
+            icon: <FaLinkedinIn />,
+            href: LINKEDIN,
+            label: "LinkedIn",
+          },
+          {
+            icon: <FaInstagram />,
+            href: INSTAGRAM,
+            label: "Instagram",
+          },
+          {
+            icon: <FaGithub />,
+            href: GITHUB,
+            label: "GitHub",
+          },
+        ].map((social) => (
+          <motion.a
+            key={social.label}
+            href={social.href}
+            target="_blank"
+            rel="noreferrer"
+            whileHover={{
+              scale: 1.12,
+              y: -3,
+            }}
+            whileTap={{
+              scale: 0.9,
+            }}
+            className="
+              grid
+              h-10
+              w-10
+              place-items-center
+              rounded-full
+              border
+              border-white/[0.07]
+              bg-white/[0.03]
+              text-white/50
+              backdrop-blur-xl
+              transition-colors
+              hover:border-[#d9ff32]/30
+              hover:bg-[#d9ff32]/10
+              hover:text-[#f54a00]
+            "
+            aria-label={social.label}
+          >
+            {social.icon}
+          </motion.a>
+        ))}
+      </motion.div>
+    </footer>
   );
 };
 

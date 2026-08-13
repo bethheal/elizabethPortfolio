@@ -1,193 +1,390 @@
 import React from "react";
-import { bgImg, profileImg } from "../assets";
-import { FaLongArrowAltRight, FaQuoteLeft } from "react-icons/fa";
-import AvatarReview from "./PagesComponents/AvatarReview";
+import { profileImg } from "../assets/images";
+import { FaArrowRight, FaCircle } from "react-icons/fa";
 import { Link } from "react-scroll";
-import TextAnimation from "./PagesComponents/TextAnimation";
-
+import ServiceTicker from "./PagesComponents/ServiceTicker";
 
 const Home = () => {
   return (
     <section
       id="home"
-      className="flex flex-col items-center min-h-screen px-2 w-full overflow-x-hidden mb-30"
+      className="relative w-full overflow-hidden bg-[#080808] text-white"
     >
-      {/* Header Greeting */}
-      <div className="pt-20 font-semibold flex flex-col items-center text-center w-full">
-        <h1 className="text-base sm:text-lg md:text-xl">Hello There</h1>
-        {/* <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-          I'm <span className="italic text-orange-600">Elizabeth Dowuona</span>
-        </h2> */}
-        <TextAnimation/>
-        {/* <p className="text-gray-600 text-xs sm:text-sm md:text-base">
-          Software Developer
-        </p> */}
+       <div className="text-center mb-10">
+        <h2 className="text-2xl  text-black sm:text-3xl md:text-4xl font-bold border-y-2 inline-block px-4 sm:px-6 py-2">
+          Projects
+        </h2>
+      </div>
+      {/* =========================
+          BACKGROUND EFFECTS
+      ========================== */}
+
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Grid */}
+        <div
+          className="absolute inset-0 opacity-[0.08]"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)
+            `,
+            backgroundSize: "45px 45px",
+          }}
+        />
+
+        {/* Orange glow */}
+        <div className="absolute right-[-15%] top-[25%] h-[500px] w-[500px] rounded-full bg-orange-500/10 blur-[150px]" />
+
+        {/* White glow */}
+        <div className="absolute bottom-[5%] left-[-10%] h-[300px] w-[300px] rounded-full bg-white/5 blur-[120px]" />
       </div>
 
-      {/* Main Content */}
-      <div className="flex flex-col gap-4 pt-8 sm:gap-8 sm:pt-12 lg:flex-row lg:items-start lg:text-left text-center w-full justify-center">
-        {/* Left Section */}
-        <div className="flex flex-col items-center px-2 sm:px-4 lg:items-start flex-1">
-          <FaQuoteLeft className="self-center lg:self-start" />
-          <p className="font-light text-xs sm:text-sm text-gray-700 mt-4 mb-8 max-w-sm">
-            Passionate about turning ideas into intuitive digital experiences, I
-            specialize in building responsive, user-focused interfaces. I thrive
-            in collaborative environments, constantly seek to learn and evolve
-            in the ever-changing world of tech.
-          </p>
+      {/* =========================
+          MAIN CONTENT
+      ========================== */}
 
-          <div className="flex flex-col items-center lg:items-start">
-            <AvatarReview />
-            <span className="text-orange-600 font-bold text-base sm:text-lg">
-              10<span>+</span> Reviews
+      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-[1600px] flex-col px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+        {/* =========================
+            NAME
+        ========================== */}
+
+        <div className="relative pt-12 sm:pt-16 md:pt-20 lg:pt-16">
+          <h1
+            className="
+              whitespace-nowrap
+              text-center
+              text-[16vw]
+              font-medium
+              uppercase
+              leading-[0.75]
+              tracking-[-0.07em]
+              text-white
+              sm:text-[15vw]
+              md:text-[13vw]
+              lg:text-[11.5vw]
+              xl:text-[11vw]
+            "
+          >
+            ELIZABETH MAAME
+          </h1>
+
+          {/* =================================================
+              SOFTWARE + BIG PROFILE IMAGE + ENGINEER
+          ================================================= */}
+
+          <div
+            className="
+              relative
+              mt-8
+              flex
+              min-h-[520px]
+              items-start
+              justify-center
+              md:mt-10
+              md:min-h-[600px]
+              lg:min-h-[680px]
+            "
+          >
+            {/* =========================
+                SOFTWARE
+            ========================== */}
+
+            <span
+              className="
+                relative
+                z-10
+                mt-8
+                whitespace-nowrap
+                text-[8vw]
+                font-light
+                uppercase
+                leading-none
+                tracking-[-0.05em]
+                text-white/90
+                sm:text-5xl
+                md:text-6xl
+                lg:mt-12
+                lg:text-[6.2vw]
+              "
+            >
+              Software
             </span>
-            <p className="font-light text-xs sm:text-sm text-gray-700">
-              Reviews from clients
-            </p>
-          </div>
-        </div>
 
-        {/* Middle Section */}
-        <div className="flex flex-col items-center justify-center flex-1">
-          <div className="relative flex flex-col items-center w-full max-w-xs sm:max-w-sm lg:max-w-md">
-            {/* Background Image */}
-            <img
-              src={bgImg}
-              alt="Background"
-              className="w-full h-48 sm:h-56 lg:h-64 object-cover object-center rounded-xl"
-            />
+            {/* =========================
+                BIG PROFILE IMAGE
+            ========================== */}
 
-            {/* Profile Image */}
-            <img
-              src={profileImg}
-              alt="Profile"
-              className="w-32 h-32 sm:w-48 sm:h-48 lg:w-72 lg:h-72 object-cover object-center rounded-full border-4 border-white shadow-lg absolute top-12 sm:top-14 lg:top-8 z-10"
-            />
+            <div
+              className="
+                relative
+                z-30
+                mx-[-2vw]
+                mt-[-100px]
+                h-[430px]
+                w-[290px]
+                shrink-0
+                overflow-hidden
+                shadow-[0_30px_80px_rgba(0,0,0,0.8)]
 
-            {/* Buttons */}
-            <div className="relative my-2 sm:absolute sm:top-[calc(100%+4rem)] flex flex-col sm:flex-row gap-3 z-20 bg-white p-2 rounded-full shadow-xl">
-              <Link
-                to="projects"
-                smooth={true}
-                duration={500}
-                offset={-70}
-                className="bg-black text-orange-600 px-4 py-2 rounded-full cursor-pointer flex items-center gap-2 text-xs sm:text-sm shadow-xl hover:bg-orange-600 hover:text-white transition-colors duration-300"
-              >
-                <span>Projects</span>
-                <FaLongArrowAltRight className="rounded-full text-white w-4 h-4 bg-orange-600" />
-              </Link>
+                sm:mx-[-2.5vw]
+                sm:mt-[-105px]
+                sm:h-[500px]
+                sm:w-[330px]
 
-              <Link
-                to="contact"
-                smooth={true}
-                duration={500}
-                offset={-70} 
-                className="text-orange-600 cursor-pointer px-5 py-2 border border-black rounded-full text-xs sm:text-sm shadow hover:bg-orange-600 hover:text-white transition-colors duration-300">
-                Hire me
-              </Link>
+                md:mt-[-130px]
+                md:h-[580px]
+                md:w-[380px]
+
+                lg:mx-[-2vw]
+                lg:mt-[-140px]
+                lg:h-[680px]
+                lg:w-[440px]
+              "
+            >
+              <img
+                src={profileImg}
+                alt="Elizabeth Dowuona"
+                className="
+                  h-full
+                  w-full
+                  object-cover
+                  object-top
+                "
+              />
+
+              {/* Bottom fade */}
+              <div
+                className="
+                  pointer-events-none
+                  absolute
+                  inset-x-0
+                  bottom-0
+                  h-[38%]
+                  bg-gradient-to-t
+                  from-[#080808]
+                  via-[#080808]/70
+                  to-transparent
+                "
+              />
             </div>
+
+            {/* =========================
+                ENGINEER
+            ========================== */}
+
+            <span
+              className="
+                relative
+                z-10
+                mt-8
+                whitespace-nowrap
+                text-[8vw]
+                font-light
+                uppercase
+                leading-none
+                tracking-[-0.05em]
+                text-white/90
+                sm:text-5xl
+                md:text-6xl
+                lg:mt-12
+                lg:text-[6.2vw]
+              "
+            >
+              Engineer
+            </span>
           </div>
         </div>
 
-        {/* Right Section */}
-        <div className="flex flex-col items-center space-y-4 flex-1">
-          <p className="bg-black text-white px-4 py-1 rounded-full text-xs sm:text-sm font-medium">
-            React.js
-          </p>
+        {/* =========================
+            HERO CONTENT
+        ========================== */}
 
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
-            <p className="bg-orange-500 text-white px-4 py-1 rounded-full text-xs sm:text-sm font-medium">
-              Node.js
+        <div
+          className="
+            relative
+            z-40
+            -mt-[150px]
+            flex
+            flex-col
+            items-center
+            justify-between
+            gap-10
+            pb-16
+            lg:-mt-[300px]
+            lg:flex-row
+            lg:items-end
+          "
+        >
+          {/* =========================
+              LEFT CONTENT
+          ========================== */}
+
+          <div
+            className="
+              flex
+              w-full
+              max-w-[350px]
+              flex-col
+              items-center
+              text-center
+              lg:items-start
+              lg:text-left
+            "
+          >
+            {/* Availability */}
+            <div
+              className="
+                mb-6
+                flex
+                items-center
+                gap-2
+                rounded-full
+                border
+                border-white/20
+                bg-white/5
+                px-4
+                py-2
+                backdrop-blur-md
+              "
+            >
+              <FaCircle className="h-2 w-2 text-lime-400" />
+
+              <span className="text-xs font-light text-white/80 sm:text-sm">
+                Open for freelance works.
+              </span>
+            </div>
+
+            {/* Description */}
+            <p
+              className="
+                max-w-[330px]
+                text-sm
+                font-light
+                leading-7
+                text-white/65
+                sm:text-base
+                sm:leading-8
+              "
+            >
+              Hey there! I'm a Software Engineer building modern, responsive and
+              user-focused digital experiences for the global marketplace.
             </p>
-            <p className="bg-orange-200 text-black px-4 py-1 rounded-full text-xs sm:text-sm font-medium flex items-center gap-1">
-              <span className="bg-orange-600 w-2 h-2 rounded-full inline-block"></span>
-              Express.js
-            </p>
-            <p className="bg-orange-500 text-white px-4 py-1 rounded-full text-xs sm:text-sm font-medium">
-              Git & GitHub
-            </p>
-            <p className="bg-black text-white px-4 py-1 rounded-full text-xs sm:text-sm font-medium">
-              Website Design
-            </p>
+
+            {/* Button */}
+            <Link
+              to="contact"
+              smooth={true}
+              duration={600}
+              offset={-70}
+              className="
+                group
+                mt-7
+                flex
+                cursor-pointer
+                items-center
+                gap-3
+                rounded-full
+                bg-white
+                px-6
+                py-3
+                text-sm
+                font-medium
+                text-black
+                transition-all
+                duration-300
+                hover:bg-orange-500
+                hover:text-white
+              "
+            >
+              <span>Schedule Call</span>
+
+              <span
+                className="
+                  flex
+                  h-6
+                  w-6
+                  items-center
+                  justify-center
+                  rounded-full
+                  bg-black
+                  text-white
+                  transition-transform
+                  duration-300
+                  group-hover:translate-x-1
+                "
+              >
+                <FaArrowRight className="h-3 w-3" />
+              </span>
+            </Link>
           </div>
 
-          <p className="bg-orange-200 text-black px-4 py-1 rounded-full text-xs sm:text-sm font-medium flex items-center gap-1">
-            <span className="bg-orange-600 w-2 h-2 rounded-full inline-block"></span>
-            Firebase
-          </p>
+          {/* =========================
+              RIGHT CONTENT
+          ========================== */}
+
+          {/* =========================
+    RIGHT CONTENT
+========================== */}
+          <div
+            className="
+    flex
+    w-full
+    max-w-[300px]
+    flex-col
+    items-center
+    text-center
+    lg:items-end
+    lg:text-right
+  "
+          >
+            <p className="text-xs uppercase tracking-[0.3em] text-white/40">
+              What I Do
+            </p>
+
+            <h2
+              className="
+      mt-4
+      text-2xl
+      font-light
+      uppercase
+      leading-tight
+      tracking-tight
+      sm:text-3xl
+    "
+            >
+              Digital
+              <br />
+              Experiences
+            </h2>
+
+            <ServiceTicker />
+          </div>
         </div>
+
+        {/* =========================
+            TECHNOLOGY STRIP
+        ========================== */}
+
+        <div
+          className="
+            relative
+            z-40
+            mb-8
+            flex
+            w-full
+            flex-wrap
+            items-center
+            justify-center
+            gap-x-8
+            gap-y-4
+            border-t
+            border-white/10
+            py-5
+            sm:justify-between
+            sm:gap-x-5
+          "
+        ></div>
       </div>
-<div className="mt-10">
-  <div className="w-full relative bg-black py-2 mt-12 sm:mt-20 lg:mt-32 overflow-hidden whitespace-nowrap">
-    <div className="flex w-max animate-marquee will-change-transform hover:[animation-play-state:paused]">
-
-      {/* Track 1 */}
-      <div className="flex items-center gap-4 px-6 text-xs sm:text-sm flex-none">
-        <span className="text-white">Responsive Design</span>
-        <span className="text-red-500">+</span>
-        <span className="text-white">Database</span>
-        <span className="text-red-500">+</span>
-        <span className="text-white">API Integration</span>
-        <span className="text-red-500">+</span>
-        <span className="text-white">Optimization</span>
-        <span className="text-red-500">+</span>
-        <span className="text-white">Authentication</span>
-        <span className="text-red-500">+</span>
-        <span className="text-white">Deployment</span>
-        <span className="text-red-500">+</span>
-        <span className="text-white">TypeScript</span>
-        <span className="text-red-500">+</span>
-        <span className="text-white">GraphQL</span>
-        <span className="text-red-500">+</span>
-        <span className="text-white">Docker</span>
-        <span className="text-red-500">+</span>
-        <span className="text-white">CI/CD</span>
-        <span className="text-red-500">+</span>
-        <span className="text-white">Testing</span>
-        <span className="text-red-500">+</span>
-        <span className="text-white">Accessibility</span>
-        <span className="text-red-500">+</span>
-        <span className="text-white">Performance</span>
-        <span className="text-red-500">+</span>
-        <span className="text-white">Design Systems</span>
-      </div>
-
-      {/* Track 2 */}
-      <div className="flex items-center gap-4 px-6 text-xs sm:text-sm flex-none" aria-hidden="true">
-        <span className="text-white">Responsive Design</span>
-        <span className="text-red-500">+</span>
-        <span className="text-white">Database</span>
-        <span className="text-red-500">+</span>
-        <span className="text-white">API Integration</span>
-        <span className="text-red-500">+</span>
-        <span className="text-white">Optimization</span>
-        <span className="text-red-500">+</span>
-        <span className="text-white">Authentication</span>
-        <span className="text-red-500">+</span>
-        <span className="text-white">Deployment</span>
-        <span className="text-red-500">+</span>
-        <span className="text-white">TypeScript</span>
-        <span className="text-red-500">+</span>
-        <span className="text-white">GraphQL</span>
-        <span className="text-red-500">+</span>
-        <span className="text-white">Docker</span>
-        <span className="text-red-500">+</span>
-        <span className="text-white">CI/CD</span>
-        <span className="text-red-500">+</span>
-        <span className="text-white">Testing</span>
-        <span className="text-red-500">+</span>
-        <span className="text-white">Accessibility</span>
-        <span className="text-red-500">+</span>
-        <span className="text-white">Performance</span>
-        <span className="text-red-500">+</span>
-        <span className="text-white">Design Systems</span>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-
     </section>
   );
 };

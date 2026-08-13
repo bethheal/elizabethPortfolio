@@ -22,6 +22,7 @@ import {
   SiNetlify,
   SiTypescript,
 } from "react-icons/si";
+import { BackgroundBeams } from "../components/bgMotion";
 
 const devSkills = [
   {
@@ -66,68 +67,94 @@ const tools = [
   { name: "Netlify", icon: <SiNetlify className="text-cyan-500 text-4xl" /> },
 ];
 
+const skillRows = [
+  {
+    label: "Frontend",
+    items: devSkills.slice(0, 5),
+    reverse: false,
+  },
+  {
+    label: "Backend",
+    items: devSkills.slice(5),
+    reverse: true,
+  },
+  {
+    label: "Tools",
+    items: tools,
+    reverse: false,
+  },
+];
+
+const SkillMarquee = ({ row }) => {
+  const repeatedItems = [...row.items, ...row.items, ...row.items, ...row.items];
+  const distance = row.reverse ? ["-50%", "0%"] : ["0%", "-50%"];
+
+  return (
+    <div className="group relative overflow-hidden border-y border-white/10 py-4">
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent" />
+      <motion.div
+        className="skills-track"
+        animate={{ x: distance }}
+        transition={{
+          duration: 28,
+          ease: "linear",
+          repeat: Infinity,
+          repeatType: "loop",
+        }}
+      >
+        {repeatedItems.map((skill, index) => (
+          <div
+            key={`${row.label}-${skill.name}-${index}`}
+            className="skill-chip"
+          >
+            <span className="text-2xl">{skill.icon}</span>
+            <span className="text-gray-100 hover:text-black">{skill.name}</span>
+          </div>
+        ))}
+      </motion.div>
+    </div>
+  );
+};
+
 const Skills = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
   return (
     <section
       id="skills"
-      className="relative z-10 bg-black text-white min-h-screen py-10 mt-10  mb-10 px-6 "
+      className="relative z-10 min-h-screen      bg-#CACACA px-0 py-16 text-black"
     >
       {/* Heading */}
-      <div className="flex flex-col items-center text-center mb-12">
-        <h2 className="text-3xl sm:text-4xl font-bold  px-6 py-2">
-          <SkillsAnimatedText className="text-3xl md:text-5xl pt-10 font-bold" />
+      <div className="mx-auto mb-14 flex max-w-6xl flex-col items-center px-6 text-center">
+        
+        <h2 className="min-h-16 w-full text-4xl font-black uppercase sm:text-6xl">
+          <SkillsAnimatedText className="text-4xl font-black md:text-6xl" />
         </h2>
-        <p className="text-gray-400 mt-4 text-sm sm:text-base">
+        <p className="mt-5 max-w-2xl text-sm uppercase tracking-[0.25em] text-gray-400 sm:text-base">
           Technologies, tools & design platforms I work with
         </p>
       </div>
 
-      {/* Development Skills */}
-      <div
-        ref={ref}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16"
-      >
-        {devSkills.map((skill, index) => (
+      <div ref={ref} className="space-y-6">
+        {skillRows.map((row, index) => (
           <motion.div
-            key={skill.name}
-            initial={{ opacity: 0, y: 30 }}
+            key={row.label}
+            initial={{ opacity: 0, y: 24 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: index * 0.1, duration: 0.5 }}
-            className="flex flex-col items-center bg-gray-900 p-6 rounded-2xl shadow-lg"
+            transition={{ delay: index * 0.12, duration: 0.5 }}
           >
-            <div className="text-5xl mb-3">{skill.icon}</div>
-            <h3 className="text-lg font-semibold mb-2">{skill.name}</h3>
-
-            {/* Animated Progress Bar */}
-            <div className="w-full bg-gray-700 h-2 rounded-full overflow-hidden">
-              <motion.div
-                className="h-2 bg-orange-500 rounded-full"
-                initial={{ width: 0 }}
-                animate={inView ? { width: `${skill.level}%` } : {}}
-                transition={{ duration: 1.5, delay: index * 0.1 }}
-              />
+            <div className="mx-auto mb-3 flex max-w-6xl items-center gap-4 px-6">
+              <span className="text-xs font-semibold uppercase tracking-[0.35em] text-orange-400">
+                {row.label}
+              </span>
+              <span className="h-px flex-1 bg-black/10" />
             </div>
-            <span className="text-sm text-gray-400 mt-2">{skill.level}%</span>
+            <SkillMarquee row={row} />
           </motion.div>
         ))}
-      </div>
+              <BackgroundBeams/>
 
-      {/* Tools & Design Platforms */}
-      <div className="flex flex-wrap justify-center gap-8 max-w-4xl mx-auto">
-        {tools.map((tool, index) => (
-          <motion.div
-            key={tool.name}
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={inView ? { scale: 1, opacity: 1 } : {}}
-            transition={{ delay: index * 0.15, duration: 0.5 }}
-            className="flex flex-col items-center bg-gray-900 p-6 rounded-xl shadow-md hover:-translate-y-2 transition"
-          >
-            {tool.icon}
-            <span className="mt-3 text-sm font-semibold">{tool.name}</span>
-          </motion.div>
-        ))}
       </div>
     </section>
   );

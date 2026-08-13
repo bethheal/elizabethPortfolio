@@ -2,7 +2,7 @@ import SideBar from "./SideBar";
 import { useEffect } from "react";
 import { scroller } from "react-scroll";
 import Home from "../pages/Home";
-import About from "../pages/About";
+import Experience from "../pages/Experience";
 import Skills from "../pages/Skills";
 import Projects from "../pages/Projects";
 import Contact from "../pages/Contact";
@@ -22,19 +22,18 @@ function RootLayout() {
     }
   }, []);
 
- return (
-  <>
-    <SideBar />
-<main className="sm:ml-64 px-4 pt-6">
+  return (
+    <>
+      <SideBar />
+      <main className=" pt-24 lg:pt-0">
         <Home />
-        <About />
-        <Skills />
         <Projects />
+        <Experience />
+        <Skills />
         <Contact />
-    </main>
-  </>
-);
-
+      </main>
+    </>
+  );
 }
 
 export default RootLayout;

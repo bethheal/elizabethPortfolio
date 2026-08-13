@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function SkillsAnimatedText() {
+export default function SkillsAnimatedText({ className = "" }) {
   const words = ["Skills", "Tools & ", "Platforms"];
   const [index, setIndex] = useState(0);
   const [show, setShow] = useState(true);
@@ -22,12 +22,16 @@ export default function SkillsAnimatedText() {
 
   return (
     <span
-      className={`absolute inset-x-0 top-10 m-auto inline-block w-full text-center
+    
+      className={`inline-block text-center
         transition-all duration-500 ease-in-out
-        ${show ? "opacity-100 blur-0" : "opacity-0 blur-sm"}
+        ${show ? "opacity-100 blur-0" : "opacity-0 blur-sm"} ${className}
       `}
     >
+
       {words[index]}
+                  <span className="text-orange-600">.</span>
+
     </span>
   );
 }
