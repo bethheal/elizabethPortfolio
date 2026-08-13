@@ -51,53 +51,157 @@ const Home = () => {
 {/* =========================
     NAME
 ========================== */}
+{/* =========================
+    NAME + TITLE
+========================== */}
 <div className="relative pt-10 sm:pt-14 md:pt-16 lg:pt-16">
+
+  {/* =========================
+      NAME
+  ========================== */}
   <h1
     className="
+      relative
+      z-20
+      mx-auto
       w-full
       text-center
-      text-[15vw]
       font-medium
       uppercase
       leading-[0.78]
       tracking-[-0.075em]
       text-white
 
+      text-[15vw]
+
+      sm:whitespace-nowrap
       sm:text-[14vw]
+
       md:text-[12.5vw]
+
       lg:text-[11vw]
+
       xl:text-[10.5vw]
+
       2xl:text-[10vw]
     "
   >
-    ELIZABETH MAAME
+    <span className="block sm:inline">ELIZABETH</span>{" "}
+    <span className="block sm:inline">MAAME</span>
   </h1>
 
   {/* =================================================
-      SOFTWARE + PROFILE IMAGE + ENGINEER
+      MOBILE LAYOUT
+      ELIZABETH MAAME
+      SOFTWARE ENGINEER
+      IMAGE
+  ================================================= */}
+  <div
+    className="
+      flex
+      flex-col
+      items-center
+      lg:hidden
+    "
+  >
+
+    {/* SOFTWARE ENGINEER */}
+    <div
+      className="
+        relative
+        z-40
+        mt-7
+        flex
+        items-center
+        justify-center
+        gap-2
+        whitespace-nowrap
+        text-[8vw]
+        font-light
+        uppercase
+        leading-none
+        tracking-[-0.06em]
+        text-white/90
+
+        sm:mt-8
+        sm:text-5xl
+
+        md:text-6xl
+      "
+    >
+      <span>Software</span>
+      <span>Engineer</span>
+    </div>
+
+    {/* MOBILE IMAGE */}
+    <div
+      className="
+        relative
+        z-30
+        mt-5
+        h-[400px]
+        w-[265px]
+        overflow-hidden
+        shadow-[0_30px_80px_rgba(0,0,0,0.8)]
+
+        sm:mt-6
+        sm:h-[500px]
+        sm:w-[320px]
+
+        md:h-[570px]
+        md:w-[370px]
+      "
+    >
+      <img
+        src={profileImg}
+        alt="Elizabeth Dowuona"
+        className="
+          h-full
+          w-full
+          object-cover
+          object-top
+        "
+      />
+
+      {/* Bottom fade */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          inset-x-0
+          bottom-0
+          h-[40%]
+          bg-gradient-to-t
+          from-[#080808]
+          via-[#080808]/70
+          to-transparent
+        "
+      />
+    </div>
+  </div>
+
+  {/* =================================================
+      DESKTOP LAYOUT
+      SOFTWARE     IMAGE     ENGINEER
   ================================================= */}
   <div
     className="
       relative
       mt-10
-      flex
-      min-h-[390px]
+      hidden
+      min-h-[680px]
       w-full
       items-start
       justify-center
 
-      sm:mt-12
-      sm:min-h-[470px]
-
-      md:mt-14
-      md:min-h-[560px]
+      lg:flex
 
       lg:mt-16
-      lg:min-h-[650px]
 
-      xl:min-h-[700px]
+      xl:min-h-[720px]
     "
   >
+
     {/* =========================
         SOFTWARE
     ========================== */}
@@ -105,24 +209,15 @@ const Home = () => {
       className="
         relative
         z-10
-        mt-10
+        mt-20
         shrink-0
         whitespace-nowrap
-        text-[7vw]
+        text-[5.8vw]
         font-light
         uppercase
         leading-none
         tracking-[-0.06em]
         text-white/90
-
-        sm:mt-12
-        sm:text-[6.5vw]
-
-        md:mt-16
-        md:text-[6vw]
-
-        lg:mt-20
-        lg:text-[5.8vw]
 
         xl:text-[5.5vw]
       "
@@ -131,37 +226,21 @@ const Home = () => {
     </span>
 
     {/* =========================
-        BIG PROFILE IMAGE
+        DESKTOP IMAGE
     ========================== */}
     <div
       className="
         relative
         z-30
-        mx-[-1.5vw]
-        mt-[-55px]
-        h-[390px]
-        w-[250px]
+        mx-[-2vw]
+        mt-[-160px]
+        h-[660px]
+        w-[425px]
         shrink-0
         overflow-hidden
-        rounded-[2px]
         shadow-[0_30px_80px_rgba(0,0,0,0.8)]
 
-        sm:mx-[-2vw]
-        sm:mt-[-75px]
-        sm:h-[480px]
-        sm:w-[310px]
-
-        md:mx-[-2vw]
-        md:mt-[-95px]
-        md:h-[560px]
-        md:w-[360px]
-
-        lg:mx-[-2vw]
-        lg:mt-[-115px]
-        lg:h-[650px]
-        lg:w-[420px]
-
-        xl:h-[700px]
+        xl:h-[710px]
         xl:w-[455px]
       "
     >
@@ -183,7 +262,7 @@ const Home = () => {
           absolute
           inset-x-0
           bottom-0
-          h-[38%]
+          h-[40%]
           bg-gradient-to-t
           from-[#080808]
           via-[#080808]/70
@@ -199,24 +278,15 @@ const Home = () => {
       className="
         relative
         z-10
-        mt-10
+        mt-20
         shrink-0
         whitespace-nowrap
-        text-[7vw]
+        text-[5.8vw]
         font-light
         uppercase
         leading-none
         tracking-[-0.06em]
         text-white/90
-
-        sm:mt-12
-        sm:text-[6.5vw]
-
-        md:mt-16
-        md:text-[6vw]
-
-        lg:mt-20
-        lg:text-[5.8vw]
 
         xl:text-[5.5vw]
       "
@@ -224,7 +294,7 @@ const Home = () => {
       Engineer
     </span>
   </div>
-</div>     
+</div>   
 
         {/* =========================
             HERO CONTENT
