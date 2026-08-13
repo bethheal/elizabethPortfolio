@@ -48,152 +48,183 @@ const Home = () => {
             NAME
         ========================== */}
 
-        <div className="relative pt-12 sm:pt-16 md:pt-20 lg:pt-16">
-          <h1
-            className="
-              whitespace-nowrap
-              text-center
-              text-[16vw]
-              font-medium
-              uppercase
-              leading-[0.75]
-              tracking-[-0.07em]
-              text-white
-              sm:text-[15vw]
-              md:text-[13vw]
-              lg:text-[11.5vw]
-              xl:text-[11vw]
-            "
-          >
-            ELIZABETH MAAME
-          </h1>
+{/* =========================
+    NAME
+========================== */}
+<div className="relative pt-10 sm:pt-14 md:pt-16 lg:pt-16">
+  <h1
+    className="
+      w-full
+      text-center
+      text-[15vw]
+      font-medium
+      uppercase
+      leading-[0.78]
+      tracking-[-0.075em]
+      text-white
 
-          {/* =================================================
-              SOFTWARE + BIG PROFILE IMAGE + ENGINEER
-          ================================================= */}
+      sm:text-[14vw]
+      md:text-[12.5vw]
+      lg:text-[11vw]
+      xl:text-[10.5vw]
+      2xl:text-[10vw]
+    "
+  >
+    ELIZABETH MAAME
+  </h1>
 
-          <div
-            className="
-              relative
-              mt-8
-              flex
-              min-h-[520px]
-              items-start
-              justify-center
-              md:mt-10
-              md:min-h-[600px]
-              lg:min-h-[680px]
-            "
-          >
-            {/* =========================
-                SOFTWARE
-            ========================== */}
+  {/* =================================================
+      SOFTWARE + PROFILE IMAGE + ENGINEER
+  ================================================= */}
+  <div
+    className="
+      relative
+      mt-10
+      flex
+      min-h-[390px]
+      w-full
+      items-start
+      justify-center
 
-            <span
-              className="
-                relative
-                z-10
-                mt-8
-                whitespace-nowrap
-                text-[8vw]
-                font-light
-                uppercase
-                leading-none
-                tracking-[-0.05em]
-                text-white/90
-                sm:text-5xl
-                md:text-6xl
-                lg:mt-12
-                lg:text-[6.2vw]
-              "
-            >
-              Software
-            </span>
+      sm:mt-12
+      sm:min-h-[470px]
 
-            {/* =========================
-                BIG PROFILE IMAGE
-            ========================== */}
+      md:mt-14
+      md:min-h-[560px]
 
-            <div
-              className="
-                relative
-                z-30
-                mx-[-2vw]
-                mt-[-100px]
-                h-[430px]
-                w-[290px]
-                shrink-0
-                overflow-hidden
-                shadow-[0_30px_80px_rgba(0,0,0,0.8)]
+      lg:mt-16
+      lg:min-h-[650px]
 
-                sm:mx-[-2.5vw]
-                sm:mt-[-105px]
-                sm:h-[500px]
-                sm:w-[330px]
+      xl:min-h-[700px]
+    "
+  >
+    {/* =========================
+        SOFTWARE
+    ========================== */}
+    <span
+      className="
+        relative
+        z-10
+        mt-10
+        shrink-0
+        whitespace-nowrap
+        text-[7vw]
+        font-light
+        uppercase
+        leading-none
+        tracking-[-0.06em]
+        text-white/90
 
-                md:mt-[-130px]
-                md:h-[580px]
-                md:w-[380px]
+        sm:mt-12
+        sm:text-[6.5vw]
 
-                lg:mx-[-2vw]
-                lg:mt-[-140px]
-                lg:h-[680px]
-                lg:w-[440px]
-              "
-            >
-              <img
-                src={profileImg}
-                alt="Elizabeth Dowuona"
-                className="
-                  h-full
-                  w-full
-                  object-cover
-                  object-top
-                "
-              />
+        md:mt-16
+        md:text-[6vw]
 
-              {/* Bottom fade */}
-              <div
-                className="
-                  pointer-events-none
-                  absolute
-                  inset-x-0
-                  bottom-0
-                  h-[38%]
-                  bg-gradient-to-t
-                  from-[#080808]
-                  via-[#080808]/70
-                  to-transparent
-                "
-              />
-            </div>
+        lg:mt-20
+        lg:text-[5.8vw]
 
-            {/* =========================
-                ENGINEER
-            ========================== */}
+        xl:text-[5.5vw]
+      "
+    >
+      Software
+    </span>
 
-            <span
-              className="
-                relative
-                z-10
-                mt-8
-                whitespace-nowrap
-                text-[8vw]
-                font-light
-                uppercase
-                leading-none
-                tracking-[-0.05em]
-                text-white/90
-                sm:text-5xl
-                md:text-6xl
-                lg:mt-12
-                lg:text-[6.2vw]
-              "
-            >
-              Engineer
-            </span>
-          </div>
-        </div>
+    {/* =========================
+        BIG PROFILE IMAGE
+    ========================== */}
+    <div
+      className="
+        relative
+        z-30
+        mx-[-1.5vw]
+        mt-[-55px]
+        h-[390px]
+        w-[250px]
+        shrink-0
+        overflow-hidden
+        rounded-[2px]
+        shadow-[0_30px_80px_rgba(0,0,0,0.8)]
+
+        sm:mx-[-2vw]
+        sm:mt-[-75px]
+        sm:h-[480px]
+        sm:w-[310px]
+
+        md:mx-[-2vw]
+        md:mt-[-95px]
+        md:h-[560px]
+        md:w-[360px]
+
+        lg:mx-[-2vw]
+        lg:mt-[-115px]
+        lg:h-[650px]
+        lg:w-[420px]
+
+        xl:h-[700px]
+        xl:w-[455px]
+      "
+    >
+      <img
+        src={profileImg}
+        alt="Elizabeth Dowuona"
+        className="
+          h-full
+          w-full
+          object-cover
+          object-top
+        "
+      />
+
+      {/* Bottom fade */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          inset-x-0
+          bottom-0
+          h-[38%]
+          bg-gradient-to-t
+          from-[#080808]
+          via-[#080808]/70
+          to-transparent
+        "
+      />
+    </div>
+
+    {/* =========================
+        ENGINEER
+    ========================== */}
+    <span
+      className="
+        relative
+        z-10
+        mt-10
+        shrink-0
+        whitespace-nowrap
+        text-[7vw]
+        font-light
+        uppercase
+        leading-none
+        tracking-[-0.06em]
+        text-white/90
+
+        sm:mt-12
+        sm:text-[6.5vw]
+
+        md:mt-16
+        md:text-[6vw]
+
+        lg:mt-20
+        lg:text-[5.8vw]
+
+        xl:text-[5.5vw]
+      "
+    >
+      Engineer
+    </span>
+  </div>
+</div>     
 
         {/* =========================
             HERO CONTENT
