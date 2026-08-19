@@ -109,8 +109,9 @@ const SkillMarquee = ({ row }) => {
             className="skill-chip"
           >
             <span className="text-2xl">{skill.icon}</span>
-            <span className="text-gray-100 hover:text-black">{skill.name}</span>
-          </div>
+<span className="text-gray-100 hover:text-red-700">
+  {skill.name}
+</span>          </div>
         ))}
       </motion.div>
     </div>
@@ -123,7 +124,7 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="relative z-10 min-h-screen      bg-#CACACA px-0 py-16 text-black"
+      className="relative z-10 min-h-screen bg-#CACACA px-0 py-16 text-black"
     >
       {/* Heading */}
       <div className="mx-auto mb-14 flex max-w-6xl flex-col items-center px-6 text-center">
@@ -145,7 +146,7 @@ const Skills = () => {
             transition={{ delay: index * 0.12, duration: 0.5 }}
           >
             <div className="mx-auto mb-3 flex max-w-6xl items-center gap-4 px-6">
-              <span className="text-xs font-semibold uppercase tracking-[0.35em] text-orange-400">
+              <span className="text-xs  font-semibold uppercase tracking-[0.35em] text-orange-400">
                 {row.label}
               </span>
               <span className="h-px flex-1 bg-black/10" />
