@@ -9,6 +9,7 @@ import { TbFileCv } from "react-icons/tb";
 import { TfiEmail } from "react-icons/tfi";
 import { Link } from "react-scroll";
 import { avatarImg } from "../assets/images";
+import BackgroundMusic from "./bgMusic";
 
 const navItems = [
   { id: "home", icon: <CiHome />, label: "Home" },
@@ -101,14 +102,17 @@ const SideBar = () => {
               </p>
             </div>
           </div>
+          <div className="flex flex-row items-center gap-3">
+  <BackgroundMusic />
 
-          <button
-            type="button"
-            onClick={() => setIsOpen(true)}
-            className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-gray-600 transition hover:border-orange-400/60 hover:bg-orange-500/15"
-          >
-            Menu
-          </button>
+  <button
+    type="button"
+    onClick={() => setIsOpen(true)}
+    className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-gray-600 transition hover:border-orange-400/60 hover:bg-orange-500/15"
+  >
+    Menu
+  </button>
+</div>
         </div>
       </header>
 

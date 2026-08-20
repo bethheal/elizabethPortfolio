@@ -43,6 +43,7 @@ function App() {
       ) : (
         <>
           <RootLayout />
+          {/* <BackgroundMusic/> */}
 
           {/* Scroll-to-top button */}
           <AnimatePresence>
@@ -59,6 +60,7 @@ function App() {
                 <FaArrowUp size={20} />
               </motion.button>
             )}
+
           </AnimatePresence>
         </>
       )}
