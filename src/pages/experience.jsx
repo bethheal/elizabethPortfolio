@@ -611,8 +611,7 @@ const Experience = () => {
       </style>
        {/* download cv */}
       <a
-  href="https://docs.google.com/document/d/1Um_Qm1S7-6zeMWDj64L4WLHXZWKtbY1t/edit?usp=sharing&ouid=117874706650817948176&rtpof=true&sd=true"
-  target="_blank"
+  href="https://docs.google.com/document/d/1haU77e2oiN6l0lXaqMPMaunEULB03RQnotV98h7xiME/edit?usp=sharing"
   rel="noopener noreferrer"
   download
   className="mt-10 inline-flex items-center gap-2 rounded-full bg-orange-500 px-6 py-3 font-semibold text-white transition hover:bg-orange-600"
